@@ -1,0 +1,25 @@
+@api = http://localhost:3009
+
+### Salud de la API y la base de datos
+GET {{api}}/api/salud
+
+### Ver los mensajes
+GET {{api}}/api/mensajes
+
+### Escribir un mensaje
+POST {{api}}/api/mensajes
+Content-Type: application/json
+
+{
+  "nombre": "Ana",
+  "texto": "Probando la API"
+}
+
+### Mensaje inválido (debe responder 400)
+POST {{api}}/api/mensajes
+Content-Type: application/json
+
+{
+  "nombre": "A",
+  "texto": ""
+}
